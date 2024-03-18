@@ -165,11 +165,11 @@ int main() {
 	// string expression = "A*(b+c)+(b/d)*a+z*u";
 	string expression = "a+b*(c-d)/e";
 
+	// Uncomment the below line for infix to prefix
+	// reverse(expression.begin(), expression.end());
 
-	reverse(expression.begin(), expression.end());
-
-
-    Stack s;
+	
+	Stack s;
 	string output = "";
 	int i;
 
@@ -180,8 +180,9 @@ int main() {
 	// cout << "Enter expression: ";
 	// getline(cin, expression);
 
-	// for(i = 0; i < expression.length(); i++) {
-	for(i = expression.length() - 1; i >= 0; i--) {
+	for(i = 0; i < expression.length(); i++) {
+	// Uncomment the below line and comment the above line for infix to prefix
+	// for(i = expression.length() - 1; i >= 0; i--) {
 
 		char current = expression[i];
 		char top = s.peek();
@@ -233,7 +234,8 @@ int main() {
 		output += s.pop();
 	}
 
-	reverse(output.begin(), output.end());
+	// Uncomment the below line when doing infix to prefix
+	// reverse(output.begin(), output.end());
 
 	cout << output << endl;
 
